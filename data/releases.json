@@ -1,0 +1,566 @@
+{
+  "releases": [
+    {
+      "region": "uk",
+      "date": "2026-10-27",
+      "at": "2026-10-27T10:55:07Z",
+      "sha": "89944ca9a6d70330f2e5f2e78b08cf841d2dc7c6",
+      "dateFrom": "merge",
+      "commits": 11,
+      "commitsWithoutTicket": 11,
+      "tickets": []
+    },
+    {
+      "region": "uk",
+      "date": "2026-10-27",
+      "at": "2026-10-27T12:35:55Z",
+      "sha": "ed5f5853d81f52cc1d9be0fc1d51848c29629f92",
+      "dateFrom": "merge",
+      "commits": 3,
+      "commitsWithoutTicket": 3,
+      "tickets": []
+    },
+    {
+      "region": "uk",
+      "date": "2026-10-27",
+      "at": "2026-10-27T13:40:47Z",
+      "sha": "5470e9188ea3bfbccd808885ea3634b1d21088b5",
+      "dateFrom": "merge",
+      "commits": 1,
+      "commitsWithoutTicket": 1,
+      "tickets": []
+    },
+    {
+      "region": "uk",
+      "date": "2026-11-04",
+      "at": "2026-11-04T11:51:46Z",
+      "sha": "754df9c41b6fdd069c08d4f3ab992a82aa15b1f9",
+      "dateFrom": "merge",
+      "commits": 98,
+      "commitsWithoutTicket": 81,
+      "tickets": [
+        "#9508",
+        "#9692",
+        "#9749",
+        "#9767",
+        "#9769",
+        "#9824",
+        "#9831",
+        "#9834",
+        "#9845"
+      ]
+    },
+    {
+      "region": "uk",
+      "date": "2026-11-05",
+      "at": "2026-11-05T09:53:55Z",
+      "sha": "d1e4d00f5ca6ff4d76f1dba151d7c0b15793e64a",
+      "dateFrom": "merge",
+      "commits": 3,
+      "commitsWithoutTicket": 3,
+      "tickets": []
+    },
+    {
+      "region": "uk",
+      "date": "2026-11-08",
+      "at": "2026-11-08T09:11:40Z",
+      "sha": "b0d0492e36f4fb31e9f763ac83ea310e60ad602b",
+      "dateFrom": "head",
+      "commits": 5,
+      "commitsWithoutTicket": 5,
+      "tickets": []
+    },
+    {
+      "region": "eu",
+      "date": "2026-11-05",
+      "at": "2026-11-05T11:35:10Z",
+      "sha": "b60311dcbe3a63111842ecbf57e0054539a8fde8",
+      "dateFrom": "merge",
+      "commits": 38,
+      "commitsWithoutTicket": 38,
+      "tickets": []
+    },
+    {
+      "region": "eu",
+      "date": "2026-11-05",
+      "at": "2026-11-05T11:35:24Z",
+      "sha": "ecfdba1244eeec3c3859a31e23e451d9e10caac5",
+      "dateFrom": "merge",
+      "commits": 82,
+      "commitsWithoutTicket": 65,
+      "tickets": [
+        "#9508",
+        "#9692",
+        "#9749",
+        "#9767",
+        "#9769",
+        "#9824",
+        "#9831",
+        "#9834",
+        "#9845"
+      ]
+    },
+    {
+      "region": "eu",
+      "date": "2026-11-08",
+      "at": "2026-11-08T09:11:40Z",
+      "sha": "610230b7d55587296c627394813828cfb52be1a5",
+      "dateFrom": "head",
+      "commits": 1,
+      "commitsWithoutTicket": 1,
+      "tickets": []
+    },
+    {
+      "region": "us",
+      "date": "2026-10-29",
+      "at": "2026-10-29T12:04:27Z",
+      "sha": "ca7bdf9a236d40d0022ff3f7af61a3b912267d01",
+      "dateFrom": "merge",
+      "commits": 37,
+      "commitsWithoutTicket": 37,
+      "tickets": []
+    },
+    {
+      "region": "us",
+      "date": "2026-11-05",
+      "at": "2026-11-05T11:19:39Z",
+      "sha": "3c19ef6f33bdee5214c57cd769a0b146228a4de9",
+      "dateFrom": "merge",
+      "commits": 81,
+      "commitsWithoutTicket": 64,
+      "tickets": [
+        "#9508",
+        "#9692",
+        "#9749",
+        "#9767",
+        "#9769",
+        "#9824",
+        "#9831",
+        "#9834",
+        "#9845"
+      ]
+    },
+    {
+      "region": "us",
+      "date": "2026-11-08",
+      "at": "2026-11-08T09:11:29Z",
+      "sha": "398f718520e20d177cbd3fc281fd9bd57d772474",
+      "dateFrom": "head",
+      "commits": 1,
+      "commitsWithoutTicket": 1,
+      "tickets": []
+    }
+  ],
+  "tickets": {
+    "#9508": {
+      "id": "#9508",
+      "title": "ECI stores update in website",
+      "releaseNote": null,
+      "notionUrl": "https://app.notion.com/p/ECI-stores-update-in-website-3f249cbef6a18023926ad08ee6dcc212",
+      "regionLabel": [],
+      "commitTitle": "address details field",
+      "prs": [],
+      "releases": {
+        "uk": {
+          "date": "2026-11-04",
+          "sha": "754df9c41b6fdd069c08d4f3ab992a82aa15b1f9",
+          "dateFrom": "merge"
+        },
+        "eu": {
+          "date": "2026-11-05",
+          "sha": "ecfdba1244eeec3c3859a31e23e451d9e10caac5",
+          "dateFrom": "merge"
+        },
+        "us": {
+          "date": "2026-11-05",
+          "sha": "3c19ef6f33bdee5214c57cd769a0b146228a4de9",
+          "dateFrom": "merge"
+        }
+      },
+      "notion": {
+        "uk": "pending",
+        "eu": "pending",
+        "us": "pending"
+      }
+    },
+    "#9692": {
+      "id": "#9692",
+      "title": "CART Progress bar tiered update Build",
+      "releaseNote": null,
+      "notionUrl": "https://app.notion.com/p/CART-Progress-bar-tiered-update-Build-3fe49cbef6a18056a345df5a40361d61",
+      "regionLabel": [],
+      "commitTitle": "amends journey",
+      "prs": [],
+      "releases": {
+        "uk": {
+          "date": "2026-11-04",
+          "sha": "754df9c41b6fdd069c08d4f3ab992a82aa15b1f9",
+          "dateFrom": "merge"
+        },
+        "eu": {
+          "date": "2026-11-05",
+          "sha": "ecfdba1244eeec3c3859a31e23e451d9e10caac5",
+          "dateFrom": "merge"
+        },
+        "us": {
+          "date": "2026-11-05",
+          "sha": "3c19ef6f33bdee5214c57cd769a0b146228a4de9",
+          "dateFrom": "merge"
+        }
+      },
+      "notion": {
+        "uk": "pending",
+        "eu": "pending",
+        "us": "pending"
+      }
+    },
+    "#9749": {
+      "id": "#9749",
+      "title": "PLP ad variation",
+      "releaseNote": null,
+      "notionUrl": "https://app.notion.com/p/PLP-ad-variation-40549cbef6a1800a9749d313b958de27",
+      "regionLabel": [],
+      "commitTitle": "PLP promo banner",
+      "prs": [],
+      "releases": {
+        "uk": {
+          "date": "2026-11-04",
+          "sha": "754df9c41b6fdd069c08d4f3ab992a82aa15b1f9",
+          "dateFrom": "merge"
+        },
+        "eu": {
+          "date": "2026-11-05",
+          "sha": "ecfdba1244eeec3c3859a31e23e451d9e10caac5",
+          "dateFrom": "merge"
+        },
+        "us": {
+          "date": "2026-11-05",
+          "sha": "3c19ef6f33bdee5214c57cd769a0b146228a4de9",
+          "dateFrom": "merge"
+        }
+      },
+      "notion": {
+        "uk": "pending",
+        "eu": "pending",
+        "us": "pending"
+      }
+    },
+    "#9767": {
+      "id": "#9767",
+      "title": "PLP banners header custom content",
+      "releaseNote": null,
+      "notionUrl": "https://app.notion.com/p/PLP-banners-header-custom-content-40749cbef6a180f7a5e6d423cf508590",
+      "regionLabel": [],
+      "commitTitle": "PLP promo banner",
+      "prs": [],
+      "releases": {
+        "uk": {
+          "date": "2026-11-04",
+          "sha": "754df9c41b6fdd069c08d4f3ab992a82aa15b1f9",
+          "dateFrom": "merge"
+        },
+        "eu": {
+          "date": "2026-11-05",
+          "sha": "ecfdba1244eeec3c3859a31e23e451d9e10caac5",
+          "dateFrom": "merge"
+        },
+        "us": {
+          "date": "2026-11-05",
+          "sha": "3c19ef6f33bdee5214c57cd769a0b146228a4de9",
+          "dateFrom": "merge"
+        }
+      },
+      "notion": {
+        "uk": "pending",
+        "eu": "pending",
+        "us": "pending"
+      }
+    },
+    "#9769": {
+      "id": "#9769",
+      "title": "Christmas PLP Anchor links",
+      "releaseNote": null,
+      "notionUrl": "https://app.notion.com/p/Christmas-PLP-Anchor-links-40749cbef6a180a79391fb797df2ca81",
+      "regionLabel": [],
+      "commitTitle": "mobile gap",
+      "prs": [],
+      "releases": {
+        "uk": {
+          "date": "2026-11-04",
+          "sha": "754df9c41b6fdd069c08d4f3ab992a82aa15b1f9",
+          "dateFrom": "merge"
+        },
+        "eu": {
+          "date": "2026-11-05",
+          "sha": "ecfdba1244eeec3c3859a31e23e451d9e10caac5",
+          "dateFrom": "merge"
+        },
+        "us": {
+          "date": "2026-11-05",
+          "sha": "3c19ef6f33bdee5214c57cd769a0b146228a4de9",
+          "dateFrom": "merge"
+        }
+      },
+      "notion": {
+        "uk": "pending",
+        "eu": "pending",
+        "us": "pending"
+      }
+    },
+    "#9824": {
+      "id": "#9824",
+      "title": "Subscription widget pull out",
+      "releaseNote": null,
+      "notionUrl": "https://app.notion.com/p/Subscription-widget-pull-out-40c49cbef6a180b2a872c0fc290f68d9",
+      "regionLabel": [],
+      "commitTitle": "subs for bundles message",
+      "prs": [],
+      "releases": {
+        "uk": {
+          "date": "2026-11-04",
+          "sha": "754df9c41b6fdd069c08d4f3ab992a82aa15b1f9",
+          "dateFrom": "merge"
+        },
+        "eu": {
+          "date": "2026-11-05",
+          "sha": "ecfdba1244eeec3c3859a31e23e451d9e10caac5",
+          "dateFrom": "merge"
+        },
+        "us": {
+          "date": "2026-11-05",
+          "sha": "3c19ef6f33bdee5214c57cd769a0b146228a4de9",
+          "dateFrom": "merge"
+        }
+      },
+      "notion": {
+        "uk": "pending",
+        "eu": "pending",
+        "us": "pending"
+      }
+    },
+    "#9831": {
+      "id": "#9831",
+      "title": "FIX for Cart progress bar",
+      "releaseNote": null,
+      "notionUrl": "https://app.notion.com/p/FIX-for-Cart-progress-bar-40c49cbef6a1804d8becdbe2b5d29b7b",
+      "regionLabel": [],
+      "commitTitle": "bug first checkpoint",
+      "prs": [],
+      "releases": {
+        "uk": {
+          "date": "2026-11-04",
+          "sha": "754df9c41b6fdd069c08d4f3ab992a82aa15b1f9",
+          "dateFrom": "merge"
+        },
+        "eu": {
+          "date": "2026-11-05",
+          "sha": "ecfdba1244eeec3c3859a31e23e451d9e10caac5",
+          "dateFrom": "merge"
+        },
+        "us": {
+          "date": "2026-11-05",
+          "sha": "3c19ef6f33bdee5214c57cd769a0b146228a4de9",
+          "dateFrom": "merge"
+        }
+      },
+      "notion": {
+        "uk": "pending",
+        "eu": "pending",
+        "us": "pending"
+      }
+    },
+    "#9834": {
+      "id": "#9834",
+      "title": "FIX for Cart GWP features",
+      "releaseNote": null,
+      "notionUrl": "https://app.notion.com/p/FIX-for-Cart-GWP-features-40c49cbef6a180b8b0b5eb48e5371c57",
+      "regionLabel": [],
+      "commitTitle": "serving instead of price",
+      "prs": [],
+      "releases": {
+        "uk": {
+          "date": "2026-11-04",
+          "sha": "754df9c41b6fdd069c08d4f3ab992a82aa15b1f9",
+          "dateFrom": "merge"
+        },
+        "eu": {
+          "date": "2026-11-05",
+          "sha": "ecfdba1244eeec3c3859a31e23e451d9e10caac5",
+          "dateFrom": "merge"
+        },
+        "us": {
+          "date": "2026-11-05",
+          "sha": "3c19ef6f33bdee5214c57cd769a0b146228a4de9",
+          "dateFrom": "merge"
+        }
+      },
+      "notion": {
+        "uk": "pending",
+        "eu": "pending",
+        "us": "pending"
+      }
+    },
+    "#9845": {
+      "id": "#9845",
+      "title": "FIX PDP Slideout from Promo Block",
+      "releaseNote": null,
+      "notionUrl": "https://app.notion.com/p/FIX-PDP-Slideout-from-Promo-Block-40d49cbef6a18014b20ecce90fc478d2",
+      "regionLabel": [],
+      "commitTitle": "css ameds BF PDP",
+      "prs": [],
+      "releases": {
+        "uk": {
+          "date": "2026-11-04",
+          "sha": "754df9c41b6fdd069c08d4f3ab992a82aa15b1f9",
+          "dateFrom": "merge"
+        },
+        "eu": {
+          "date": "2026-11-05",
+          "sha": "ecfdba1244eeec3c3859a31e23e451d9e10caac5",
+          "dateFrom": "merge"
+        },
+        "us": {
+          "date": "2026-11-05",
+          "sha": "3c19ef6f33bdee5214c57cd769a0b146228a4de9",
+          "dateFrom": "merge"
+        }
+      },
+      "notion": {
+        "uk": "pending",
+        "eu": "pending",
+        "us": "pending"
+      }
+    }
+  },
+  "liveCommits": {
+    "6598c80bb22f59fa2ea9d8640e32367abc3c1a52": "2026-10-27",
+    "b3e99d2393deb6c84fb7b08d297e6ca7be9a3078": "2026-10-27",
+    "c944cdd9462df16c2ba30d33bc6850b7ba7da95c": "2026-10-29",
+    "6cde230e88b759023c25a3fe7d726a56b7abe33d": "2026-10-29",
+    "b2266a6c40bd2eeb70417c8d7338791fc6c5be56": "2026-10-29",
+    "65cb2bc261c901e2528eae5cd6f8648a8b2daf49": "2026-10-29",
+    "467a126c53513f6b42095ae9ae9add562752c933": "2026-10-27",
+    "f1dd483bf49e5ad19cb96bf85a38f869b87b018d": "2026-10-27",
+    "4803e3ed3d9651d1bb399b086e5aa4fe606bd326": "2026-10-27",
+    "ccae9ff5394f8493007902ddca2a6b1a8566a949": "2026-10-27",
+    "8c2f26d9dc935886f2f5fbe538d8c751e84a494e": "2026-10-29",
+    "19b018c247105f81d88512c25af263f73f243768": "2026-10-27",
+    "7be3dcf637afb09615b1f19e89b782c51861cdce": "2026-10-27",
+    "659e95084bf1e3c123816fcc694c7297405f7b52": "2026-10-27",
+    "4fd8309236bf0cf1de395e7f22812260cce64674": "2026-10-29",
+    "071f57c95ccbc286b03243063a26a572720bdc8b": "2026-10-27",
+    "e9d0d36e5e51bb4b1aa74772fa0f8a31b4de9762": "2026-10-27",
+    "dbfbaacb008c820b7fe1d06d94ee0f27ae1aa4dd": "2026-11-08",
+    "e7242179bcfd49d4e0133ad740a61a3a47f2430e": "2026-10-27",
+    "b72060f9e4e84338fc72b1dd6f7646a4b2815997": "2026-10-27",
+    "834da9a8c835de293909f8398e7539461ff7cfe9": "2026-10-27",
+    "0dbe1b2631ab35ea612c919e28e36adac4b4da2f": "2026-10-27",
+    "b543793296a1c594679493e8656f278998b41184": "2026-11-08",
+    "0350c556d89ed5a4435e6e098be8d50a58eaa9de": "2026-10-29",
+    "fdf32fe52bfb190939c92835c7c0ac6d983c1870": "2026-10-29",
+    "45b2ede63879d9374aa36fe290c2b957a8fb7017": "2026-10-29",
+    "422a44f2e4b9b744454813b84a41b1064738d462": "2026-10-29",
+    "01c0acb9fd66c504545a19e20f4e574d79cb5505": "2026-10-29",
+    "7fa16ddcd6570505f3b10ef0951da71fcfeb505f": "2026-10-29",
+    "42198320516471407f0e5383507404c8b09fbad0": "2026-10-29",
+    "6f93f3d11141047d82115e1158b12f9993a0aaeb": "2026-10-29",
+    "5eabce1cfe31cca4582f3b76fac49cbca3bb8d2d": "2026-11-04",
+    "706860d1c74f2e154d1f39b88da253217ba80264": "2026-10-29",
+    "3cc735db328d30d2f8e9c820ebc32cf565f0fe14": "2026-11-04",
+    "517275fc2fbccab628cfb212f0fb91dd388e4bd6": "2026-10-29",
+    "12d321e52916d62ccaaebbc4705644e6c74e49fa": "2026-10-29",
+    "2445b587889ebcc37e009a13aa999c569bcb2ada": "2026-10-29",
+    "1580c7041cc0b18f2d45e1fdbc23c83db852ab34": "2026-10-29",
+    "772beecccf5e1f01358c905149c18675bb40e276": "2026-10-29",
+    "edc56883b82e431667a731814148eb6d338de8b7": "2026-11-04",
+    "c500536e9eafbb89d9aa9b2356661541257594ba": "2026-10-29",
+    "36ae66a57edd32d6e8d7b02fe7daec6e50c74b50": "2026-11-04",
+    "93c143c820c20a10f9cf1aad01cea5837a5567c1": "2026-11-04",
+    "dcc3bed0008c47f25d36bfff71f7cb6366a7b07e": "2026-11-04",
+    "87d1d1dc9a8c15cfdf3d9b08894683143ddf451e": "2026-11-04",
+    "922055bbd0e295cf5f97c82c7b672d594ae69d1b": "2026-11-04",
+    "c8d92844658a0c10721c66be42144d8b6a2d302f": "2026-11-04",
+    "625727f1ff70f520e535e3b1cab3d96fdefd59bd": "2026-11-04",
+    "9bfe7a74d7f6b0777b6374fdf21996cc5cfe6ff0": "2026-11-04",
+    "3de97bcf8c9e8109fbb3a30388f182af38aa565a": "2026-10-29",
+    "88cd27c7c209c2c361ec8b202a374a3a3f1315b6": "2026-11-04",
+    "5d33888372f3c4c26c46b53710cd86933838c01b": "2026-11-04",
+    "4fd52df8823b0b5475e43c794295bc07297052f8": "2026-11-04",
+    "87e8c30c20be25b62c31aba31846cfa08a8170eb": "2026-11-04",
+    "17dd6109cf047c2eedf629573bbf5431d1468d2b": "2026-11-04",
+    "b80d194594652e8d24c2e6524d82c2d35b3ecd66": "2026-11-04",
+    "993e8f471fe12adc8415cf5676e8fa185195efe9": "2026-11-04",
+    "e9d631c4e1a9549ef244de9c13b7c7a080e380be": "2026-11-04",
+    "4a36905ad4286951e1c4fe725c4f139674a07420": "2026-11-04",
+    "8a761c8609745668ef90a4a368627a5e1252683d": "2026-11-04",
+    "c97104637a7d9629a9c19a157091b8a633a537a1": "2026-11-04",
+    "92765a77b2c566dc053243ab256dd25dfdf0a4d6": "2026-11-04",
+    "110f435c682097a9da25efc620a60d5078a23748": "2026-11-04",
+    "9d903a2d49baedd7fc079eb98f7c877d659bafc0": "2026-11-04",
+    "fd281d4cb1efa827b523e43f8c691fdce7f914f1": "2026-11-04",
+    "9a83bf51a8d629f2bddd44ddd9adfd7aee2fbc3b": "2026-11-04",
+    "4020a89da90e220f9a98a2553191cd445fb215c7": "2026-11-04",
+    "c46c6e20a451173edb32bdb6e97c76fbf772b582": "2026-11-04",
+    "6c1be8e9019adc74fe78e678fb5c711d1a67c2a4": "2026-11-04",
+    "26eb812e1cb33f4a9ef3519c1d5735b52fce7205": "2026-11-04",
+    "3d3b879935a5763421e8dec628215784fe9f29af": "2026-11-04",
+    "8000b4c4489d07a0a4bf3d37a4afc759527bd4a6": "2026-11-04",
+    "97c309488b83900fd0ae99c3fea7c171c19e3051": "2026-11-04",
+    "d7c60650d9f52d89fd9f3ce3f28ec087fc37b391": "2026-11-04",
+    "a8e5662248bc78d16ff1d6fa6c024bd0465a0d18": "2026-11-04",
+    "328a50a40a0b0f284542d185ed895eb43e18c760": "2026-11-04",
+    "8fd14e7e20d9f3a32fea3bbd0108ccb495e11cd6": "2026-11-04",
+    "36bbe37030da532377226a0d385ac9e0380b4c38": "2026-11-04",
+    "44a8f622177a5a9b7ab82aeae89272e990229f4a": "2026-11-04",
+    "aea277c34b2c9a2273956b9ff281e73dab7bc546": "2026-11-04",
+    "82b9e1c1d37cf308ef58ded12d77727798d281bd": "2026-11-04",
+    "9c69de9fd2a3d45232cda7fcee251c40d0659122": "2026-11-04",
+    "dc21ac93ce752c4009a6a95e61ac91a8dc30849e": "2026-11-04",
+    "c2d690b5e0a9f7d953e4e3748d46b13c69b4451b": "2026-11-04",
+    "f7b35909eff042e31f28ccc7aa783251961f8748": "2026-11-04",
+    "dc05a8600da804035d1617ee9e2a2e3e39b2cd22": "2026-11-04",
+    "1267e68f34df2db9ea4b96b8c6bdd860263203f2": "2026-11-04",
+    "93f2a1c7ee57ad0959d37a371365f16aca341344": "2026-11-04",
+    "e389e65c02dc6f6a201671224344dfcf3e226dfb": "2026-11-04",
+    "78687529dec5f494cf12f5f420b0a20d9e205e6d": "2026-11-04",
+    "b5ad8e8ca70cdae03f4bc40bfdc8b18d767973db": "2026-11-04",
+    "72184e836a02081c685e415c2717fccb8a8bbf28": "2026-11-04",
+    "6188e4d86d335c7eb786a74bcc7f0500d8f0e161": "2026-11-04",
+    "565a3a636e914d4642aaa60ce8312ca5ee140565": "2026-11-04",
+    "c178499c0b9c67c076009fc574d69e65f2831e7a": "2026-11-04",
+    "5a84a7c6a7213c04ab56fa6a3f58c113e3c41ab5": "2026-11-04",
+    "1e4e7ac7461edbb716cfcd109f42c41fe2adb5ac": "2026-11-04",
+    "f5e46cca37f2c30dc27f2ad10b903a1840001c5a": "2026-11-04",
+    "9aa5090adf36c084fbeeb5f101867cacc9a6fcac": "2026-11-04",
+    "e059e0feedaa18f2ea7049c4f826f85d31f35a1f": "2026-11-04",
+    "f3347d1d21d8de3e8926e98770e9b82446dd666f": "2026-11-04",
+    "cb69cb0a6432bd4e1b385b2f99117d7217a3a165": "2026-11-04",
+    "87a477b7084006a8102df1e4d32d065c060634cb": "2026-11-04",
+    "51126c37153796ecc1ab84e82cc8dc73b9edfcc4": "2026-11-04",
+    "03effdad83c18dd8cbf5aec2b1452ed319a1c00e": "2026-11-04",
+    "a307d7f436189d732af88013572ac0ebb29ea8cc": "2026-11-04",
+    "6c6d6e3e1e9407b8a0173ae252d72926ab6c4a66": "2026-11-04",
+    "0ed2a6869f4b7363a2da50451904cf124cd3017e": "2026-11-04",
+    "047091be69c707b3e4a5d32f450fbadfdfdc200d": "2026-11-04",
+    "292e7fa05845d391fd80d6fd6e39b6dea2856bd6": "2026-11-04",
+    "5d16ea6b1420a88911d8762bfe22aa8db3c08be8": "2026-11-04",
+    "fe101be7b1d452db17a8aeda78d0ee597f167726": "2026-11-04",
+    "9ea80b0f8276bf319fdc4297ef9bcff4baf76e18": "2026-11-04",
+    "510a7afcfbaadb1323c298ae74cbcd69486e9a5f": "2026-11-04",
+    "6f8039bde74175a92eac41b3bef98a25a4f5aafb": "2026-11-04",
+    "2457652bc61dd7604c739ea30aeec2dc4fa6ba65": "2026-11-08",
+    "a452b92e845d524f8c4866558e472f3df18021cc": "2026-11-08",
+    "b927555be5dac8b2964957827021c0b61fb11701": "2026-11-08",
+    "3afe29457305a543dfaa1c681df7ba083550558f": "2026-11-05",
+    "40d2f915770c043d98403ee0f1b76547f7b23c82": "2026-11-05",
+    "83e2f119347822f4a8787457d6b20b6977f735d6": "2026-11-05",
+    "50dee533142de34435f14a6401b615034a5422d2": "2026-11-05",
+    "cd900ae850f4f8f4abfb6ca57663bf722b89aeaa": "2026-11-05",
+    "f2663761d65c7c7e1450332d97028eded11194a4": "2026-11-05",
+    "4bfea4d11d0e0441fbe270e88ff129749eae2d8f": "2026-11-05",
+    "55925ca75ebe4d02572e9674a81380384bf7ed58": "2026-11-08",
+    "176dad9ffce861b5afb94be89a1f9efec896acc1": "2026-11-08",
+    "89035b548049de337e9f3d0907dd2d739e791228": "2026-11-05",
+    "65068120760e17e5a1df713135a5a6dd26c1ac18": "2026-11-05"
+  }
+}

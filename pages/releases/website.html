@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<base href="../../">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A+B Docs</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="css/main.css">
+<script src="js/updates.js" defer></script>
+<script src="js/releases-nav.js" defer></script>
+<script src="js/image-edits.js" defer></script>
+<!-- Before site.js, so "On this page" lists the releases -->
+<script src="js/releases-data.js" defer></script>
+<script src="js/releases.js" defer></script>
+<script src="js/site.js" defer></script>
+</head>
+<body data-page="website-releases" data-no-img-slots>
+
+<main class="content" id="content">
+  <header class="page-header">
+    <h1>Website releases</h1>
+    <p class="lead">What went live on the website in each region in the last 14 days. This page updates itself after each release.</p>
+  </header>
+
+  <div class="prose">
+    <div data-releases></div>
+    <p class="muted">Older releases are in the <a href="pages/releases/archive/index.html">Archive</a>.</p>
+  </div>
+</main>
+
+</body>
+</html>

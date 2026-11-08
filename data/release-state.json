@@ -1,0 +1,19 @@
+{
+  "regions": {
+    "uk": {
+      "sha": "b0d0492e36f4fb31e9f763ac83ea310e60ad602b",
+      "pushedAt": null,
+      "date": "2026-11-08"
+    },
+    "eu": {
+      "sha": "610230b7d55587296c627394813828cfb52be1a5",
+      "pushedAt": null,
+      "date": "2026-11-08"
+    },
+    "us": {
+      "sha": "398f718520e20d177cbd3fc281fd9bd57d772474",
+      "pushedAt": null,
+      "date": "2026-11-08"
+    }
+  }
+}

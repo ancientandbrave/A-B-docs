@@ -1,0 +1,66 @@
+name: Website releases
+
+# Checks the live branch of each region repo (UK, EU, US) for a new release,
+# updates the Website releases page and the Notion tickets, then commits.
+# Settings: release.config.json. Setup: scripts/README.md.
+on:
+  workflow_dispatch: # "Run workflow" button in the Actions tab
+    inputs:
+      dry_run:
+        description: "Dry run: show what would change, write nothing"
+        type: boolean
+        default: false
+  # Daily check, weekdays 18:00 UTC. To turn it on, remove the # from the two
+  # lines below and commit. Runs that find no new release change nothing.
+  # schedule:
+  #   - cron: "0 18 * * 1-5"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: website-releases
+  cancel-in-progress: false
+
+jobs:
+  release-notes:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout docs repo
+        uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Test the release script
+        run: npm test
+
+      - name: Update Website releases + Notion
+        id: release
+        run: node scripts/weekly-release.mjs
+        env:
+          DRY_RUN: ${{ inputs.dry_run && '1' || '' }}
+          RELEASE_REPOS_TOKEN: ${{ secrets.RELEASE_REPOS_TOKEN }}
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+
+      # The new Latest updates lines must follow the rules at the top of js/updates.js
+      - name: Check Latest updates wording
+        if: ${{ !cancelled() }}
+        run: node --test scripts/updates-style.test.mjs
+
+      # One commit per run, only when something changed. Runs even if one
+      # region failed, so the regions that worked are still saved.
+      - name: Commit
+        if: ${{ !cancelled() && steps.release.outputs.changed == 'true' && !inputs.dry_run }}
+        env:
+          MESSAGE: ${{ steps.release.outputs.message }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data js/releases-data.js js/releases-nav.js js/updates.js pages/releases/archive
+          git diff --cached --quiet && exit 0
+          git commit -m "$MESSAGE"
+          git pull --rebase
+          git push
