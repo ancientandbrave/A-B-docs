@@ -1,0 +1,193 @@
+{
+  "$comment": "Settings for scripts/weekly-release.mjs. Any value containing TODO must be filled in before the script will run. See scripts/README.md.",
+  "ticketPrefix": "AB",
+  "ticketIdFormat": "#{number}",
+  "ticketPatterns": [
+    "\\bAB-(\\d+)\\b",
+    "^#(\\d+)\\b"
+  ],
+  "windowDays": 14,
+  "bootstrapDays": 14,
+  "timeZone": "UTC",
+  "ignoreCommits": {
+    "$comment": "Theme editor saves that Shopify commits to the live branch. They are not releases.",
+    "authors": [
+      "shopify[bot]"
+    ],
+    "subjectStartsWith": [
+      "Update from Shopify for theme"
+    ]
+  },
+  "devRepo": "ancientandbrave/dev",
+  "regions": [
+    {
+      "id": "uk",
+      "label": "UK",
+      "repo": "ancientandbrave/uk",
+      "branch": "main",
+      "notionName": "UK"
+    },
+    {
+      "id": "eu",
+      "label": "EU",
+      "repo": "dougalcrowder/braver-eu",
+      "branch": "main",
+      "notionName": "EU"
+    },
+    {
+      "id": "us",
+      "label": "US",
+      "repo": "ancientandbrave/us",
+      "branch": "main",
+      "notionName": "US"
+    }
+  ],
+  "notion": {
+    "linkTickets": true,
+    "releasedInLabel": "{region} live {date}",
+    "properties": {
+      "$comment": "Exact Notion property names (A+B Tasks). region: a Region label property, or null if there is none. releasedIn: a multi-select to add to the database.",
+      "id": "ID",
+      "region": null,
+      "releasedIn": "Released in",
+      "status": "Status ",
+      "releaseNote": "Release note"
+    },
+    "statuses": {
+      "$comment": "update: false = the script never changes Status (it only tags and comments).",
+      "update": false,
+      "complete": "Complete",
+      "completeFrom": [
+        "Testing",
+        "On staging",
+        "For Review"
+      ],
+      "neverChange": [
+        "Backlog",
+        "To Do",
+        "In Progress",
+        "On hold"
+      ]
+    }
+  },
+  "docUpdates": {
+    "$comment": "Latest updates on the home page and the Updated tags on docs sections and tabs. When a release goes live, each changed theme file marks its docs card: sections/<name>.liquid matches the card with the same name; other files use \"map\" (page#card, or just page). Wording follows the rules at the top of js/updates.js: a new block or setting is named as in the Theme editor, otherwise \"Small fixes to the <card> section.\"; a ticket's Notion Release note replaces the text when it follows the rules. Code-formatting-only changes are skipped. Entries are added to js/updates.js and never changed afterwards, so edit them freely.",
+    "enabled": true,
+    "file": "js/updates.js",
+    "pages": {
+      "sections": {
+        "file": "pages/site/sections.html",
+        "title": "Sections library",
+        "noun": "section"
+      },
+      "navigation": {
+        "file": "pages/site/navigation.html",
+        "title": "Navigation",
+        "noun": "block",
+        "pageName": "the menu"
+      },
+      "cart": {
+        "file": "pages/shop/cart.html",
+        "title": "Cart",
+        "pageName": "the cart"
+      }
+    },
+    "map": {
+      "blocks/add-to-cart.liquid": ["sections#builder-50_50"],
+      "blocks/builder-50_50-slide.liquid": ["sections#builder-50_50-slider"],
+      "blocks/builder-50_50_donut_charts.liquid": ["sections#builder-50_50"],
+      "blocks/builder-50_50_image-sticky_text.liquid": ["sections#builder-50_50"],
+      "blocks/builder-50_50_image.liquid": [
+        "sections#builder-25_75",
+        "sections#builder-50_50-slider",
+        "sections#builder-50_50"
+      ],
+      "blocks/builder-buttons.liquid": [
+        "sections#builder-PLP-banner",
+        "sections#content-title-builder",
+        "sections#v2-content-collection"
+      ],
+      "blocks/builder-hero-image-slideshow.liquid": ["sections#slideshow-hero"],
+      "blocks/builder-plp-video-image.liquid": ["sections#builder-PLP-banner"],
+      "blocks/carousel.liquid": ["sections#builder-25_75"],
+      "blocks/column.liquid": ["sections#builder-columns"],
+      "blocks/flip-card.liquid": ["sections#content-cards-grid"],
+      "blocks/hero-image-slideshow.liquid": ["sections#slideshow-hero"],
+      "blocks/icon-tabs.liquid": ["sections#builder-slider-icons-in-tabs"],
+      "blocks/image_gallery.liquid": ["sections#builder-50_50"],
+      "blocks/location-card.liquid": ["sections#content-cards-grid"],
+      "blocks/nav-button.liquid": ["navigation#nav-60-menu-button"],
+      "blocks/nav-col-40.liquid": ["navigation"],
+      "blocks/nav-col-60.liquid": ["navigation"],
+      "blocks/nav-content-articles.liquid": ["navigation#nav-40-articles"],
+      "blocks/nav-content-banner.liquid": ["navigation#nav-60-banner", "navigation#nav-40-banner"],
+      "blocks/nav-content-bestsellers.liquid": ["navigation#nav-60-featured-products"],
+      "blocks/nav-expert-team.liquid": ["navigation#nav-40-expert-team"],
+      "blocks/nav-health-goals.liquid": ["navigation#nav-60-health-goals-grid"],
+      "blocks/nav-images-block.liquid": ["navigation#nav-60-image-cards"],
+      "blocks/nav-item-60_40.liquid": ["navigation"],
+      "blocks/nav-menu.liquid": ["navigation#nav-60-menu"],
+      "blocks/nav-slider-product-card.liquid": ["navigation#nav-60-product-cards"],
+      "blocks/product-card-grid-landscape.liquid": ["sections#feature-slider"],
+      "blocks/product-footprint-table.liquid": ["sections#content-products-footprint"],
+      "blocks/quote-card-v2.liquid": ["sections#content-cards-grid"],
+      "blocks/quote-card.liquid": ["sections#feature-slider"],
+      "blocks/review-card.liquid": ["sections#content-cards-grid", "sections#feature-slider"],
+      "blocks/roundel-heading.liquid": ["sections#v2-banner-video"],
+      "blocks/roundel-text.liquid": ["sections#v2-banner-video"],
+      "blocks/roundel.liquid": ["sections#v2-banner-video"],
+      "blocks/science-icon-text.liquid": ["sections#content-title-builder", "sections#science-sticky-image"],
+      "blocks/science-slider-graphtext.liquid": ["sections#content-science-slider"],
+      "blocks/science-slider-imagetextcharts.liquid": ["sections#content-science-slider"],
+      "blocks/science-tab.liquid": ["sections#science-slider-in-tabs"],
+      "blocks/slider-tabs-container.liquid": ["sections#science-slider-in-tabs"],
+      "blocks/tabs-container.liquid": ["sections#science-slider-in-tabs"],
+      "sections/main-cart-template.liquid": ["cart"],
+      "sections/sidecart.liquid": ["cart"],
+      "snippets/add-to-cart-form-first-variant.liquid": ["sections#main-product-template-v2"],
+      "snippets/add-to-cart-form-flat-options-alt-product.liquid": ["sections#main-product-template-v2"],
+      "snippets/add-to-cart-form-flat-options.liquid": ["sections#main-product-template-v2"],
+      "snippets/add-to-cart-form-specvariant.liquid": ["sections#static-content-collagen-compare"],
+      "snippets/button-loader-svg.liquid": ["sections#bundle-builder"],
+      "snippets/cart-*.liquid": ["cart"],
+      "snippets/collection-products-promo.liquid": ["sections#main-collection-template"],
+      "snippets/collection-promo-card.liquid": ["sections#main-collection-template"],
+      "snippets/hero_image.liquid": ["sections#hero"],
+      "snippets/hero_image_fixed.liquid": ["sections#hero"],
+      "snippets/icon-cross.liquid": ["sections#static-content-collagen-compare"],
+      "snippets/icon-divider-mountain-left.liquid": ["sections#divider-mountains-sun"],
+      "snippets/icon-divider-mountain-right.liquid": ["sections#divider-mountains-sun"],
+      "snippets/icon-divider-mountain-sun.liquid": ["sections#divider-mountains-sun"],
+      "snippets/icon-plus.liquid": ["sections#content-grid-hover-image"],
+      "snippets/icon-sun-large.liquid": ["sections#divider-sun-rays"],
+      "snippets/icon-sun-rays.liquid": ["sections#divider-sun-rays"],
+      "snippets/icon-timeline-cross.liquid": ["sections#content-method-timeline"],
+      "snippets/image-video-panel.liquid": ["sections#image-video-4-item-grid"],
+      "snippets/liquid-ajax-cart.liquid": ["cart"],
+      "snippets/no-blocks.liquid": ["sections#main-collection-template-manual"],
+      "snippets/pdp-gift-offer-notice.liquid": ["sections#main-product-template-v2"],
+      "snippets/pdp-shipping-message.liquid": ["sections#main-product-template-v2"],
+      "snippets/product-card-featured.liquid": ["sections#content-product-feature-cards"],
+      "snippets/product-card-grid-align.liquid": ["sections#content-product-text"],
+      "snippets/product-card-image.liquid": ["sections#content-product-slider"],
+      "snippets/product-flash-banner.liquid": ["sections#main-product-template-v2"],
+      "snippets/product-image-icon.liquid": ["sections#main-product-template-v2"],
+      "snippets/product-price_from.liquid": ["sections#main-product-template-v2"]
+    },
+    "fallback": {
+      "$comment": "Any other change that went live (no docs page covers it, ticket ID or not) adds this one line.",
+      "page": "website-releases",
+      "text": "Small fixes across the website.",
+      "note": "Now the full list of what went live is on Website releases."
+    }
+  },
+  "docs": {
+    "siteUrl": "TODO: address of the docs site, e.g. https://docs.example.com",
+    "releasesPage": "pages/releases/website.html",
+    "dataFile": "js/releases-data.js",
+    "releasesData": "data/releases.json",
+    "archivePages": "pages/releases/archive",
+    "navFile": "js/releases-nav.js",
+    "stateFile": "data/release-state.json"
+  }
+}

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<base href="../../">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A+B Docs</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="css/main.css">
+<script src="js/updates.js" defer></script>
+<script src="js/releases-nav.js" defer></script>
+<script src="js/image-edits.js" defer></script>
+<script src="js/site.js" defer></script>
+</head>
+<body data-page="cart">
+
+<main class="content" id="content">
+  <header class="page-header">
+    <h1>Cart</h1>
+    <p class="lead">The cart that slides in when someone adds a product, and the full cart page. Here you set up the free delivery bar, spend rewards, free gifts and add-ons. Most of it is in the <strong>Theme editor</strong> (Online Store › Themes › Customize) › <strong>Theme settings</strong>.</p>
+  </header>
+
+  <div class="prose">
+    <h2 id="whats-in-the-cart">What's in the cart</h2>
+    <ul>
+      <li><strong>Progress bar</strong>: shows how far the shopper is from free delivery, and up to two spend rewards, for example £10 off £50.</li>
+      <li><strong>Free gift chooser</strong>: the shopper picks one free product once their cart has a qualifying product.</li>
+      <li><strong>Gift with purchase</strong>: a gift the shopper can add once they spend a set amount.</li>
+      <li><strong>Add-ons</strong>: another product offered with an <strong>Add on +</strong> button.</li>
+      <li><strong>Savings</strong>: discounted items show the old price struck through. Free gifts show what they're worth and <strong>Free</strong>.</li>
+    </ul>
+
+    <div class="callout callout--warning">
+      <div>
+        <span class="callout__title">The cart only shows the offer</span>
+        Spend rewards and free gifts also need a discount in <strong>Shopify admin › Discounts</strong>. Without it, the cart shows the reward but the shopper still pays full price at checkout.
+      </div>
+    </div>
+
+    <h2 id="free-delivery-bar">Set up the free delivery bar</h2>
+    <ol class="steps">
+      <li>Go to <strong>Theme editor › Theme settings › Carts</strong> and turn on <strong>Enable</strong> under <strong>Free Shipping Progress bar</strong>.</li>
+      <li>Set <strong>Shipping Theshold in pence or cents</strong>, for example 4000 for £40.</li>
+      <li>Write the message in <strong>xx away from FREE UK delivery</strong>. Put <strong>[amount]</strong> where the amount left should go, for example "[amount] away from FREE UK delivery".</li>
+      <li>Write the <strong>Success message</strong>, shown once the shopper reaches free delivery.</li>
+      <li>To show free delivery as a banner at the top of the cart instead of on the bar, tick <strong>Make shipping a notice</strong>.</li>
+      <li>Click <strong>Save</strong>.</li>
+    </ol>
+    <p>To give subscribers free delivery whatever they spend, tick <strong>Free Shipping on default market Subs?</strong>, and the DE and ES options for those markets.</p>
+
+    <h2 id="spend-rewards">Add spend rewards to the progress bar</h2>
+    <p>Up to two rewards after free delivery, for example £10 off £50 and £25 off £100. Only products from one collection count towards them.</p>
+    <ol class="steps">
+      <li>In <strong>Shopify admin › Discounts</strong>, create an automatic discount for each reward, for the same collection and minimum spend. Set its start and end dates.</li>
+      <li>Go to <strong>Theme editor › Theme settings › Carts › Spend discount checkpoints</strong>.</li>
+      <li>Choose the <strong>Qualifying collection</strong>: the same collection as the discount.</li>
+      <li>Tick <strong>Enable checkpoint 2</strong> and set its threshold in pence, for example 5000 for £50.</li>
+      <li>Write the <strong>Checkpoint 2 label</strong> shown under the bar, for example "£10 off £50", and the <strong>‘amount to go’ message</strong> with <strong>[amount]</strong>, for example "Spend [amount] more to get £10 off".</li>
+      <li>Optional: write a <strong>product teaser message</strong>. It shows under qualifying products until the reward is reached.</li>
+      <li>For a second reward, do the same for <strong>checkpoint 3</strong>.</li>
+      <li>Write the <strong>All checkpoints complete message</strong> and click <strong>Save</strong>.</li>
+    </ol>
+    <div class="callout callout--tip">
+      <div>
+        <span class="callout__title">Subscriptions don't count</span>
+        Only one-time purchases count towards spend rewards. To count subscriptions too, tick <strong>Include subscription items in checkpoint progress</strong>.
+      </div>
+    </div>
+
+    <h2 id="free-gift-chooser">Run a free gift promotion</h2>
+    <p>Once the cart has a product from the qualifying collection, the shopper can pick one free product from the gift collection.</p>
+    <ol class="steps">
+      <li>In <strong>Shopify admin › Products › Collections</strong>, make a collection of the gift products, if there isn't one.</li>
+      <li>In <strong>Shopify admin › Discounts</strong>, create a <strong>Buy X get Y</strong> automatic discount: buy from the qualifying collection, get one product from the gift collection free. Set its dates.</li>
+      <li>Go to <strong>Theme editor › Theme settings › Carts › Free gift chooser</strong> and tick <strong>Enable</strong>.</li>
+      <li>Choose the <strong>Qualifying collection</strong> and the <strong>Gift products collection</strong>: the same as in the discount.</li>
+      <li>Write the <strong>Panel title</strong> and the button texts.</li>
+      <li>In <strong>Show under each gift's product name</strong>, choose the price it's worth or the number of servings.</li>
+      <li>Write the <strong>Success banner message</strong>. Put <strong>[product]</strong> where the gift's name should go, for example "Your FREE [product] is in the bag!".</li>
+      <li>Click <strong>Save</strong>.</li>
+    </ol>
+
+    <h2 id="free-gifts-in-the-cart">Show free gifts on their own</h2>
+    <ul>
+      <li><strong>Group free gift products into their own cart section</strong>: free items show under a <strong>Free Gifts</strong> heading in the slide-in cart.</li>
+      <li><strong>Show discount name under product title in cart</strong>: shows the discount's name, for example the promotion title, under each discounted item.</li>
+    </ul>
+    <p>Both are in <strong>Theme editor › Theme settings › Carts</strong> and change the cart for every product, not just the promotion.</p>
+
+    <h2 id="gift-with-purchase">Offer a gift at a spend amount</h2>
+    <ol class="steps">
+      <li>Go to <strong>Theme editor › Theme settings › Add to cart Area › in cart threshold offer</strong> and tick <strong>Enable in cart offer</strong>.</li>
+      <li>Set the <strong>Free gift threshold</strong> in pence. To show the gift when a certain product is in the cart instead, choose a <strong>Free gift product</strong>.</li>
+      <li>Choose the <strong>Gift product</strong> and add up to two variants with their image, title and button text.</li>
+      <li>Write the <strong>Offer Text</strong> and the <strong>Add Offer Text</strong>, shown once the shopper qualifies.</li>
+      <li>To only show the offer once the shopper qualifies, untick <strong>Show teaser</strong>.</li>
+      <li>Click <strong>Save</strong>.</li>
+    </ol>
+
+    <h2 id="add-ons">Offer an add-on</h2>
+    <ol class="steps">
+      <li>In <strong>Shopify admin › Products › [product] › Metafields</strong>, choose the add-on in <strong>Cross sell product</strong>.</li>
+      <li>On the add-on product, write its short text in <strong>Cross sell description</strong>.</li>
+      <li>Click <strong>Save</strong>. The add-on shows with an <strong>Add on +</strong> button when the first product is in the cart.</li>
+    </ol>
+
+    <h2 id="checklist">Before a promotion goes live</h2>
+    <ul class="checklist">
+      <li><label><input type="checkbox"> The discount in Shopify admin is active, with the right dates.</label></li>
+      <li><label><input type="checkbox"> The collections in Theme settings match the discount.</label></li>
+      <li><label><input type="checkbox"> Amounts are in pence, for example 5000 for £50.</label></li>
+      <li><label><input type="checkbox"> Messages read well with the amount or product name in place.</label></li>
+      <li><label><input type="checkbox"> You've tested the cart in each market, with a one-time product and a subscription.</label></li>
+      <li><label><input type="checkbox"> Someone will turn the offer off when the discount ends.</label></li>
+    </ul>
+
+    <h2 id="good-to-know">Good to know</h2>
+    <ul>
+      <li>Amounts are the same in every market. To use a different amount in one market, ask a developer.</li>
+      <li>Changes in <strong>Theme settings</strong> apply to the whole website as soon as you click <strong>Save</strong>.</li>
+      <li>To stop the cart opening when certain products are added, paste their variant IDs, separated by commas, in <strong>Theme settings › Add to cart Area › Suppress sidecart for variant IDs</strong>.</li>
+      <li>Free delivery and gift messages on product pages are in <a href="pages/shop/promos.html">Promos &amp; Products</a>.</li>
+    </ul>
+  </div>
+</main>
+
+</body>
+</html>

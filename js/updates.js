@@ -12,31 +12,134 @@
      section: optional — a section card (e.g. 'builder-50_50', 'nav-60-menu')
               or a heading id on that page (e.g. 'menu-links')
      type:    'updated' (default) or 'new' — use 'new' only for a new section
-     text:    one short sentence on what changed (shown on the Overview)
-     note:    a short "Now you can…" line, shown when hovering the tag
+     text:    what changed, shown on the Overview
+     note:    what people can do now, shown when hovering the tag
+
+   How to write them (checked by `npm test`):
+     - For the whole company: plain words, no code, file or developer terms.
+     - text: one short statement of what changed. Max 12 words, ends with
+       a full stop. Don't start with "You can". e.g. "Banners can show a roundel."
+     - note: starts with "Now", max 20 words, ends with a full stop.
+       Use the names people see in the Theme editor or Shopify admin.
+       e.g. "Now you can tick Add Roundel for a round badge with an image and text."
+     - British spelling (colour, centre, favourite). "Ancient + Brave" with a plus.
+     - No backticks or HTML: the text is shown as typed.
    ========================================================================== */
 
 window.DOC_UPDATES = [
+  {
+    date: '2026-11-05',
+    // Added by scripts/weekly-release.mjs from dev main changes that went live, then written up by hand.
+    items: [
+      {
+        page: 'cart',
+        type: 'new',
+        text: 'A new guide to everything in the cart.',
+        note: 'Now you can set up free delivery, spend rewards and free gift promotions in one place.',
+      },
+      {
+        page: 'cart',
+        section: 'spend-rewards',
+        text: 'The cart progress bar can show up to two spend rewards.',
+        note: 'Now you can add rewards like £10 off £50 in Theme settings › Carts.',
+      },
+      {
+        page: 'cart',
+        section: 'free-gift-chooser',
+        text: 'Shoppers can pick a free gift in the cart.',
+        note: 'Now you can run a gift promotion with a qualifying collection and a gift collection.',
+      },
+      {
+        page: 'cart',
+        section: 'free-gifts-in-the-cart',
+        text: 'Free gifts can have their own section in the cart.',
+        note: 'Now you can tick Group free gift products into their own cart section in Theme settings › Carts.',
+      },
+      {
+        page: 'sections',
+        section: 'main-collection-template',
+        text: 'Collection pages have two new promo blocks.',
+        note: 'Now you can add a Products Promo block with two products, or a Promo Banner, to the grid.',
+      },
+      {
+        page: 'sections',
+        section: 'main-product-template-v2',
+        text: 'Product pages can show a flash banner and a gift offer.',
+        note: 'Now you can tick Show Flash Banner, and add a gift offer with PDP Add to cart callout.',
+      },
+      {
+        page: 'sections',
+        section: 'featured-collection',
+        text: 'Product cards can show a View button.',
+        note: 'Now you can tick Enable View CTA button to show a View button on each product card.',
+      },
+      {
+        page: 'sections',
+        section: 'builder-50_50',
+        text: 'Product titles in Add to cart link to the product page.',
+        note: 'Now the product title opens the product page, and you can add a Button block to it.',
+      },
+      {
+        page: 'sections',
+        section: 'content-cards-grid',
+        text: 'Location cards can show address details.',
+        note: 'Now you can add Address details to each Location Card.',
+      },
+      {
+        page: 'sections',
+        section: 'content-title',
+        text: 'Titles can have no block background.',
+        note: 'Now you can pick None in Block Background to show the title without a background.',
+      },
+      {
+        page: 'sections',
+        section: 'content-article',
+        text: 'Article tags now show in gold.',
+        note: 'Now the tags under the title are gold, and the section has no background colour.',
+      },
+      {
+        page: 'navigation',
+        section: 'nav-60-image-cards',
+        text: 'Image cards work better with screen readers.',
+        note: 'Now each image card reads out its text, or the image description, to screen readers.',
+      },
+      {
+        page: 'sections',
+        text: 'Collection pages can show anchor links to jump down the page.',
+        note: 'Now you can add the PLP Anchor Links section to a collection page in the Theme editor.',
+      },
+      {
+        page: 'pdp-subscriptions',
+        text: 'Small fixes to the subscription options on product pages.',
+        note: 'Now the How subscriptions work colours are fixed, and screen readers name the switcher.',
+      },
+      {
+        page: 'website-releases',
+        text: 'Small fixes across the website.',
+        note: 'Now the full list of what went live is on Website releases.',
+      },
+    ],
+  },
   {
     date: '2026-10-16',
     items: [
       {
         page: 'sections',
         section: 'v2-banner-video',
-        text: 'You can add a roundel to the banner.',
-        note: 'Now you can tick Add Roundel to show a round badge with an image, heading and text, and pick its position and colour for each screen size.',
+        text: 'Banners can show a roundel.',
+        note: 'Now you can tick Add Roundel for a round badge with an image and text, placed per screen size.',
       },
       {
         page: 'sections',
         section: 'science-slider-in-tabs',
         text: 'Tabs can switch on their own, and slides can have a title.',
-        note: 'Now you can tick Auto switch tabs, add a title over each slide image, and leave a tab title empty to hide its label.',
+        note: 'Now you can tick Auto switch tabs, add a title over each slide image, or hide a tab label.',
       },
       {
         page: 'sections',
         section: 'builder-50_50-slider',
-        text: 'Slides can play on their own, and you can add an image slide.',
-        note: 'Now you can add autoplay to the slider classes to move slides every few seconds, and add an Image block as a slide.',
+        text: 'Slides can play on their own, and images can be slides.',
+        note: 'Now you can add autoplay to Slider classes, and add an Image block as a slide.',
       },
       {
         page: 'sections',
@@ -77,14 +180,14 @@ window.DOC_UPDATES = [
       {
         page: 'navigation',
         section: 'nav-60-health-goals-grid',
-        text: 'The health goals grid and product type links have a new design.',
-        note: 'Now the health goals grid and the links to each product type match the new menu design.',
+        text: 'The health goals grid and entry links have a new design.',
+        note: 'Now the health goals grid and /type/ links match the new menu design.',
       },
       {
         page: 'navigation',
         section: 'nav-60-product-cards',
         text: 'Grid layout now has a "View all" button.',
-        note: 'Now the View all label shows as a button below the grid, and as the last card on the mobile slider.',
+        note: 'Now View all shows as a button below the grid, and as the last card on mobile.',
       },
       {
         page: 'navigation',

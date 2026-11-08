@@ -54,6 +54,7 @@
       items: [
         { id: 'promos', title: 'Promos & Products', icon: 'tag', href: 'pages/shop/promos.html', desc: 'Product page sections, free shipping bar, gift with purchase and cart add-ons.', keywords: 'promo product badge toggle subscription upsell bundle free gift cart banner' },
         { id: 'plp-banners', title: 'PLP banners', icon: 'layout', href: 'pages/shop/plp-banners.html', desc: 'Single and double banners in the collection grid.', keywords: 'collection plp banner single double grid tile' },
+        { id: 'cart', title: 'Cart', icon: 'cart', href: 'pages/shop/cart.html', desc: 'Free delivery bar, spend rewards, free gift promotions and add-ons in the cart.', keywords: 'cart basket sidecart free delivery shipping bar progress checkpoint spend reward discount free gift chooser promotion gift with purchase add on cross sell' },
       ],
     },
     {
@@ -83,6 +84,25 @@
       items: [
         { id: 'utilities', title: 'Utility classes', icon: 'grid', href: 'pages/developers/utilities.html', desc: 'Searchable reference of every A+B utility class, with CSS and copy buttons.', keywords: 'css classes flex spacing margin padding typography display responsive' },
         { id: 'notes', title: 'Notes', icon: 'alert', href: 'pages/developers/notes.html', desc: 'Settings that do nothing and other problems found in the theme.', keywords: 'bugs issues problems known broken does nothing' },
+      ],
+    },
+    {
+      group: 'Releases',
+      items: [
+        { id: 'website-releases', title: 'Website releases', icon: 'flag', href: 'pages/releases/website.html', desc: 'What went live in the UK, EU and US in the last 14 days.', keywords: 'release live deploy changelog tickets uk eu us region notion' },
+        { id: 'releases-archive', title: 'Archive', icon: 'archive', href: 'pages/releases/archive/index.html', desc: 'Every past website release, one page per month.', keywords: 'release archive history past months older' },
+        // One page per month, made by scripts/weekly-release.mjs (js/releases-nav.js).
+        // Not in the left panel; searchable by ticket ID and what changed.
+        ...(window.DOC_RELEASE_ARCHIVE || []).map(m => ({
+          id: `releases-${m.month}`,
+          title: m.title,
+          sidebar: false,
+          parent: 'releases-archive',
+          crumbs: ['Releases', { label: 'Archive', href: 'pages/releases/archive/index.html' }, m.month.slice(0, 4), m.title.split(' ')[0]],
+          href: m.href,
+          desc: `Website releases in ${m.title}.`,
+          keywords: `release archive ${m.keywords}`,
+        })),
       ],
     },
   ];
@@ -132,6 +152,9 @@
   };
 
   Object.assign(ICONS, {
+    cart: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2l2.4 11h10.2L20 7H6.2"/><circle cx="9" cy="19.5" r="1.5"/><circle cx="17" cy="19.5" r="1.5"/></svg>',
+    archive: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="4" rx="1"/><path d="M5 8v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8"/><path d="M10 12h4"/></svg>',
+    flag: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4"/><path d="M5 4h12l-2.5 4.5L17 13H5"/></svg>',
     tag: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12V4a1 1 0 0 1 1-1h8l9 9-9 9-9-9z"/><circle cx="8" cy="8" r="1.5"/></svg>',
     pen: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9l-4-4L4 16v4z"/><path d="M13.5 6.5l4 4"/></svg>',
     hash: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 4L7 20M17 4l-2 16M4 9h16M3 15h16"/></svg>',
@@ -222,7 +245,7 @@
           ${g.group ? `<p class="sidebar__heading">${esc(g.group)}</p>` : ''}
           <ul>
             ${g.items.map(p => {
-              const active = p.id === currentId;
+              const active = p.id === currentId || (current && current.parent === p.id);
               const upd = UPDATED_PAGES.has(p.id);
               const dot = upd ? `<span class="updated-dot" role="link" tabindex="0" data-href="${esc(updateHref(p.id))}" title="Go to what changed" aria-label="Go to what changed in ${esc(p.title)}"></span>` : '';
               return `<li><a class="sidebar__link${active ? ' is-active' : ''}${upd ? ' is-updated' : ''}" href="${p.href}"${active ? ' aria-current="page"' : ''}>${iconFor(p)}${esc(p.title)}${dot}</a></li>`;
@@ -272,16 +295,35 @@
   document.title = 'A+B Docs';
 
   // ── Latest updates: list on the Overview ──────────────────────────────────
+  // Also shows the newest website release from js/releases-data.js (made by
+  // scripts/weekly-release.mjs): one row per ticket, linking to Website releases.
+  function latestWebsiteRelease() {
+    const data = window.DOC_RELEASES;
+    const page = PAGES.find(p => p.id === 'website-releases');
+    if (!data || !page || !data.tickets) return null;
+    const dates = data.tickets.flatMap(t => Object.values(t.releases)).sort();
+    return dates.length ? { date: dates[dates.length - 1], page } : null;
+  }
+
   document.querySelectorAll('[data-updates]').forEach(box => {
-    if (!LATEST || !UPDATED_ITEMS.length) { box.remove(); return; }
-    const date = new Date(LATEST.date + 'T12:00:00').toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+    const web = latestWebsiteRelease();
+    const releasesPage = PAGES.find(p => p.id === 'website-releases');
+    const showGuide = Boolean(LATEST && UPDATED_ITEMS.length);
+    if (!web && !showGuide) { box.remove(); return; }
+    // The newest date of a website release or a guide update; it links to Website releases
+    const newest = [web && web.date, showGuide && LATEST.date].filter(Boolean).sort().pop();
+    const date = new Date(newest + 'T12:00:00').toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+    const title = showGuide && LATEST.date === newest && LATEST.title ? ` · ${esc(LATEST.title)}` : '';
+    const dateHtml = releasesPage
+      ? `<span class="updates__date"><a class="updates__date" href="${releasesPage.href}" title="See what went live on the website">${esc(date)}</a>${title}</span>`
+      : `<span class="updates__date">${esc(date)}${title}</span>`;
     box.innerHTML = `
       <div class="updates__head">
         <h2>Latest updates</h2>
-        <span class="updates__date">${esc(date)}${LATEST.title ? ` · ${esc(LATEST.title)}` : ''}</span>
+        ${dateHtml}
       </div>
       <ul class="updates__list">
-        ${UPDATED_ITEMS.map((item, i) => {
+        ${(showGuide ? UPDATED_ITEMS : []).map((item, i) => {
           const page = PAGES.find(p => p.id === item.page);
           if (!page) return '';
           return `<li><a class="updates__item" href="${updateHref(item.page, i)}">
@@ -292,6 +334,7 @@
         }).join('')}
       </ul>`;
   });
+
 
   // ── Latest updates: mark updated cards and headings on this page ──────────
   if (UPDATED_ITEMS.some(i => i.page === currentId && !i.section)) {
@@ -326,17 +369,21 @@
   }
 
   // ── Breadcrumb ─────────────────────────────────────────────────────────────
+  // `crumbs` on a NAV item gives a longer trail (strings, or { label, href } links)
   if (current && current.group && !content.hasAttribute('data-no-breadcrumb')) {
+    const crumbs = current.crumbs || [current.group, current.title];
     content.prepend(el(`
       <ol class="breadcrumb" aria-label="Breadcrumb">
-        <li>${esc(current.group)}</li>
-        <li><span aria-current="page">${esc(current.title)}</span></li>
+        ${crumbs.map((c, i) => {
+          if (i === crumbs.length - 1) return `<li><span aria-current="page">${esc(c.label || c)}</span></li>`;
+          return c.href ? `<li><a href="${c.href}">${esc(c.label)}</a></li>` : `<li>${esc(c)}</li>`;
+        }).join('')}
       </ol>`));
   }
 
   // ── Home: page cards built from NAV ────────────────────────────────────────
   document.querySelectorAll('[data-nav-cards]').forEach(grid => {
-    grid.innerHTML = PAGES.filter(p => p.id !== 'home').map(p => `
+    grid.innerHTML = PAGES.filter(p => p.id !== 'home' && !p.parent).map(p => `
       <a class="card${UPDATED_PAGES.has(p.id) ? ' is-updated' : ''}" href="${UPDATED_PAGES.has(p.id) ? updateHref(p.id) : p.href}">
         ${UPDATED_PAGES.has(p.id) ? pill(indexesFor(p.id)) : ''}
         <span class="card__title">${iconFor(p)}${esc(p.title)}</span>
